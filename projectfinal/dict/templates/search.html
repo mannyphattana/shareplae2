@@ -19,7 +19,7 @@
             <p>
               <span><strong>Syn.</strong></span>
               {% for syn in result.esyn %}
-              <a href='/dict/search/?search={{syn}}'>{{syn}} </a>
+              <a href='/dict/search/?search={{syn}}&mode=word'>{{syn}} </a>
               {% endfor %}
             </p>
             {% endif %}
@@ -27,7 +27,7 @@
             <p>
               <span><strong>Ant.</strong></span>
               {% for ant in result.eant %}
-              <a href='/dict/search/?search={{ant}}'>{{ant}} </a>
+              <a href='/dict/search/?search={{ant}}&mode=word'>{{ant}} </a>
               {% endfor %}
             </p>
             {% endif %}
