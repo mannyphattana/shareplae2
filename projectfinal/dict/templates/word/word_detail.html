@@ -1,0 +1,80 @@
+{% extends "base_generic.html" %} {% block content %}
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="d-flex justify-content-between mb-3">
+      <h1 class="display-4">
+        {{word.eentry}}
+      </h1>
+      <h1 class="display-4">
+        {{word.ecat}}.
+      </h1>
+    </div>
+    <p>{{word.tentry}}</p>
+    {% if word.ethai %}
+    <p>{{word.ethai}}</p>
+    {% endif %} 
+    {% if word.esyn %}
+    <p>
+      <strong>Syn.</strong>
+      {% for syn in word.esyn %}
+      <a href='/dict/search/?search={{syn}}'>{{syn}}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+    {% if word.eant %}
+    <p>
+      <strong>Ant.</strong>
+      {% for ant in word.eant %} 
+      <a href='/dict/search/?search={{ant}}'>{{ant}}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+      {% if isFavorite %}
+      <p><a href="/dict/unfavorite/{{word.id}}?next={{request.path}}">Remove from my favorite</a></p>
+      {% else %}
+      <p><a href="/dict/favorite/{{word.id}}?next={{request.path}}">Add to my favorite</a></p>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% if comments %}
+<div class="card mb-3">
+  <div class="card-body">
+    {% for comment in comments %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4"><strong>{{comment.user.username}}</strong></div>
+          <div class="col-md-8">{{ comment.comment }}</div>
+          {% if user.is_superuser %}
+          <a class="btn btn-outline-danger" href="{% url 'deletecomment' comment.id %}" style="position: absolute; right: 0;" role="button">delete</a>
+          {% endif %}
+          {% if user == comment.user %}
+            <a class="btn btn-outline-danger" href="{% url 'deletecomment' comment.id %}" style="position: absolute; right: 0;" role="button">delete</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if user.is_authenticated %}
+<div class="card">
+  <div class="card-body">
+    <form action="" method="post" class="form">
+      {% csrf_token %} 
+      <div class="row">
+        <div class="col-sm-10">{{ form.comment }}</div>
+        <div class="col-sm-2"> <button type="submit" class="btn btn-outline-primary btn-block">ส่ง</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

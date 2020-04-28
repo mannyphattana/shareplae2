@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<div class="py-5 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="mx-auto col-lg-10">
+              <h1>Then, my friend</h1>
+              <p class="mb-3 mx-auto w-75 lead">We hope you will be enjoy on our site.<br>If you have any problems you can contact us by the following way</p>
+              <div class="row">
+                <div class="col-md-4 mt-4 px-4 col-6"> <a href="https://www.facebook.com/MonkeyManz1">
+                    <img src="{% static 'img/facebook.png' %}" width="50" height="50" ></a>
+                  <h5> <b>Facebook</b></h5>
+                </div>
+                <div class="col-md-4 mt-4 px-4 col-6"><img src="{% static 'img/email.png' %}" width="50" height="50" >
+                  <h5> <b>Email</b></h5>
+                  <p class="mb-3">5910513029@email.psu.ac.th</p>
+                </div>
+                <div class="col-md-4 mt-4 px-4 col-6"><img src="{% static 'img/home.png' %}" width="50" height="50" >
+                  <h5> <b>Our office</b></h5>
+                  <p class="mb-3">Faculty of Management Sciences<br>Business of Information System Department</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

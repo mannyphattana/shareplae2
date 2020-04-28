@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %} {% block content %}
+<div class="card">
+  <div class="card-body">
+    {% if results %}
+    <h3 class="pb-3">ผลการค้นหา</h3>
+    <table class="table table-bordered">
+      <tbody>
+        {% for result in results %}
+        <tr>
+          <td>
+            <p><a href="{{ result.get_absolute_url }}">{{result.eentry}}</a></p>
+          </td>
+          <td>
+            <p>
+              <span>({{result.ecat}})</span>
+              {{result.tentry}}
+            </p>
+            {% if result.esyn %}
+            <p>
+              <span><strong>Syn.</strong></span>
+              {% for syn in result.esyn %}
+              <a href='/dict/search/?search={{syn}}'>{{syn}} </a>
+              {% endfor %}
+            </p>
+            {% endif %}
+            {% if result.eant %}
+            <p>
+              <span><strong>Ant.</strong></span>
+              {% for ant in result.eant %}
+              <a href='/dict/search/?search={{ant}}'>{{ant}} </a>
+              {% endfor %}
+            </p>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>ไม่พบ</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

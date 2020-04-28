@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<div class="pt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="mb-4" >About us</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 py-md-4 px-4 order-1 order-lg-1 text-lg-right d-flex flex-column justify-content-between">
+              <div class="row">
+                <div class="col-9 col-md-12">
+                  <p class="lead mb-1"> <b>1.</b></p>
+                  <p>เพื่อเป็นเครื่องมือสำหรับการ ร่วมกันสร้างพจนานุกรมแบบสองภาษาแบบเปิดเสรี โดยอาศัยอินเทอร์เน็ต</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-9 col-md-12">
+                  <p class="lead mb-1"> <b>3.</b></p>
+                  <p>คำที่คุณเพิ่มเข้ามา อาจถูกค้นหาโดยใครซักคนหนึ่งที่ต้องการทราบความหมายของคำนั้น และเขาได้คำตอบเพราะความใจดีของคุณ</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6 mx-auto order-3 order-lg-2"> <img class="img-fluid my-5" src="{% static 'img/logo.png' %}"> </div>
+            <div class="col-lg-3 col-md-6 py-md-4 px-4 order-2 order-lg-3 d-flex flex-column justify-content-between">
+              <div class="row">
+                <div class="col-9 col-md-12">
+                  <p class="lead mb-1"> <b>2.</b></p>
+                  <p>สร้างสังคมแห่งการแบ่งปันโดยที่เมื่อวันหนึ่งคุณรู้สึกว่าเว็บไซต์ของเรายังไม่มีคำนี้ และต้องการจะเพิ่มคำ คุณก็สามารถทำได้ โดยผู้ดูแลจะตรวจคำใหม่ๆที่เพิ่มเข้ามาและเพิ่มเข้าสู่ระบบอีกทีหนึ่ง</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-9 col-md-12">
+                  <p class="lead mb-1"> <b>4.</b></p>
+                  <p>เพิ่มทางเลือกและความสะดวกสบายให้แก่คุณมากขึ้นด้วยระบบการบันทึกคำที่เคยค้นหาและ Search History</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

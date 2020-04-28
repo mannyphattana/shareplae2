@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>word List</h1>
+  {% if word_list %}
+  <ul>
+    {% for word in word_list %}
+      <li>
+          <a href="{{ word.get_absolute_url }}">{{ word.eentry }}</a> ({{word.tentry}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no words.</p>
+  {% endif %}  
+{% endblock %}

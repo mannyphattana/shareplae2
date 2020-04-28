@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>My favorite words</h1>
+  {% if favorites %}
+  <ul>
+    {% for fav in favorites %}
+        <div class="card">
+          <div class="card-body">
+            <a href="{{ fav.word.get_absolute_url }}">{{ fav.word.eentry }}</a> 
+            ({{fav.word.tentry}})
+          </div>
+        </div></br>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no words.</p>
+  {% endif %}  
+{% endblock %}

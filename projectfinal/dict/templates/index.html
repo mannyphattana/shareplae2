@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="py-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-1">SHAREPLAE<br></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="" >Share your lovely word with lovely people</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Annoucement!</h5>
+                <p class="card-text" >Our website has <strong>{{ num_words }}</strong> words for you</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

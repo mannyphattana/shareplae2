@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load nextpage %}
+{% block content %}
+{% autopaginate dataset 20 %}
+<div class="card-body">
+    <div class="card-columns">
+    {% for data in dataset %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-card-title">{{ data.eentry }}<br/></p>
+                <p class="card-text">{{ data.tentry }}</p>
+                <p class="card-text">{{ data.ecat }}</p>
+                <p class="card-text">{{ data.esyn }}</p>
+                <p class="card-text">{{ data.eant }}</p>
+                {% if user.is_superuser %}
+                <a class="btn btn-warning" href="{% url 'updatecrud' data.id %}" role="button">Edit</a>
+                <a class="btn btn-danger" href="{% url 'deletecrud' data.id %}" role="button">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %} 
+    </div>
+<center>{% paginate %}</center>
+</div> 
+{% endblock %}
