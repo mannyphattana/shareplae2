@@ -6,6 +6,6 @@ django-nextpage==1.0.2
 gunicorn==20.0.4
 psycopg2==2.8.5
 pytz==2019.3
-sqlparse==0.3.1
+sqlparse==0.4.4
 whitenoise==5.0.1
 
